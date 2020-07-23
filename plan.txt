@@ -1,0 +1,16 @@
+Pages
+Navbar element above them all
+about
+* Static page with about description
+
+
+discover
+    dog
+    thumb up
+    thumb down
+    number of friends
+
+search
+    search bar
+    search return elements inside search return
+
