@@ -1,16 +1,14 @@
 import React from 'react';
 import Loading from '../Loading';
 import useAxios from 'axios-hooks';
-import Alert from 'react-bootstrap/Alert';
 import DogBox from '../DogBox';
 
 const DogResults = (props) => {
     const { search } = props;
 
     const APICall = `https://dog.ceo/api/breed/${encodeURI(search.split(' ').join('/'))}/images`;
-    console.log(APICall);
 
-    const [{ data, loading, error }, refetch] = useAxios(APICall);
+    const [{ data, loading, error }] = useAxios(APICall);
 
     if (search === '') return '';
     if (loading) return <Loading />;

@@ -5,7 +5,7 @@ import './style.scss'
 const Loading = () => {
     return (
         <div className="d-flex flex-column h-100 w-100 align-items-center justify-content-center loading">
-            <h4>Loading...</h4>
+            <p>Loading...</p>
             <Spinner animation="grow" variant="info" size="lg" />
         </div>
     )

@@ -15,11 +15,13 @@ const Browsebar = (props) => {
     if (loading) return <Loading />;
     if (error) return <Alert variant="danger">Cannot fetch that breed</Alert>;
 
+
+
     return (
         <Form>
             <Form.Group controlId="exampleForm.ControlSelect1">
                 <Form.Label>Breed</Form.Label>
-                <Form.Control as="select">
+                <Form.Control as="select" onChange={props.changeBreed}>
                     {Object.keys(data.message).map((breed, ind) => (
                         <option key={ind}>{breed}</option>
                     ))}

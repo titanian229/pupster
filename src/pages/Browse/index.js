@@ -6,9 +6,13 @@ const Browse = () => {
 
     const [breed, setBreed] = useState('')
 
+    
+
     const changeBreed = (newSearch) => {
         setBreed(newSearch.target.value)
     }
+
+
 
 
     return (

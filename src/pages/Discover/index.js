@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import DogContainer from '../../components/DogContainer';
+import { FaPaw } from 'react-icons/fa';
 
 const Discover = () => {
     if (!localStorage.dogsLiked) {
@@ -12,10 +13,21 @@ const Discover = () => {
     const [dogsMutuallyLiked, setDogsMutuallyLiked] = useState(dogsLikedSaved);
     const [lastLike, setLastLike] = useState(false);
 
-    const likeClicked = (clickVariant) => {
+    const saveDog = (dog) => {
+        if (localStorage.savedDogs) {
+            let savedDogs = JSON.parse(localStorage.savedDogs);
+            savedDogs.push(dog);
+            localStorage.savedDogs = JSON.stringify(savedDogs);
+        } else {
+            localStorage.savedDogs = JSON.stringify([dog]);
+        }
+    };
+
+    const likeClicked = (dog) => {
         if (Math.random() > 0.5) {
             localStorage.dogsLiked = dogsMutuallyLiked + 1;
             setDogsMutuallyLiked(dogsMutuallyLiked + 1);
+            saveDog(dog);
             setLastLike(true);
         } else {
             setLastLike(false);
@@ -29,11 +41,11 @@ const Discover = () => {
     };
 
     return (
-        <div>
-            <h1 className="text-center">Meet new dogs!</h1>
-            <h2 className="text-center">
+        <>
+            <h1 className="text-center mt-4">Meet new dogs!</h1>
+            <h4 className="text-center">
                 Thumbs up any dog you'd like to meet, and thumbs down if you're a literal monster
-            </h2>
+            </h4>
             <div className="d-flex flex-column align-items-center justify-content-center">
                 <DogContainer likeClicked={likeClicked} dislikeClicked={dislikeClicked} />
                 {lastLike ? (
@@ -44,10 +56,12 @@ const Discover = () => {
                     ''
                 )}
                 <h2>
+                    <FaPaw className="mx-2" />
                     You've made {dogsMutuallyLiked} {dogsMutuallyLiked === 1 ? 'friend' : 'friends'} so far
+                    <FaPaw className="mx-2" />
                 </h2>
             </div>
-        </div>
+        </>
     );
 };
 

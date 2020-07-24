@@ -8,6 +8,7 @@ import About from './pages/About';
 import Discover from './pages/Discover';
 import Search from './pages/Search';
 import Browse from './pages/Browse';
+import Likes from './pages/Likes';
 import Container from 'react-bootstrap/Container';
 
 const NavBarWithRouter = withRouter(NavBar);
@@ -22,6 +23,7 @@ function App() {
                 <Route exact path="/discover" component={Discover} />
                 <Route exact path="/search" component={Search} />
                 <Route exact path="/browse" component={Browse} />
+                <Route exact path="/likes" component={Likes} />
             </Container>
         </Router>
     );
