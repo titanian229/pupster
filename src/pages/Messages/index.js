@@ -53,7 +53,7 @@ const Messages = (props) => {
 
     return (
         <div>
-            <h1 className="my-4">Messages</h1>
+            <h1 className="my-4">Message your match</h1>
             <div className="w-75">{displayMessages}</div>
             <InputGroup className="mb-3 w-75">
                 <FormControl
