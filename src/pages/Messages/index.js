@@ -61,8 +61,7 @@ const Messages = (props) => {
                     value={messField}
                     // value={messField}
                     placeholder="send a message!"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
+                    aria-label="message field"
                 />
                 <InputGroup.Append>
                     <Button variant="info" onClick={addMessage}>
