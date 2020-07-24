@@ -12,7 +12,7 @@ const Discover = () => {
 
     const [dogsMutuallyLiked, setDogsMutuallyLiked] = useState(dogsLikedSaved);
     const [lastLike, setLastLike] = useState(false);
-
+    const [dislikeCount, setDislikeCount] = useState(0)
     const saveDog = (dog) => {
         if (localStorage.savedDogs) {
             let savedDogs = JSON.parse(localStorage.savedDogs);
@@ -38,6 +38,13 @@ const Discover = () => {
         console.log('disliked');
         window.alert("They're good dogs, what's wrong with you?");
         setLastLike(false);
+        setDislikeCount(dislikeCount+1)
+
+        if (dislikeCount > 1) {
+            window.location.href = "https://www.google.com/search?q=therapists+near+me"
+        }
+
+
     };
 
     return (

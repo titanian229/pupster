@@ -8,7 +8,8 @@ const DogBox = (props) => {
     };
     return (
         <div className="d-flex flex-column align-items-center">
-            <Image style={style} className="my-2" src={props.dog} />
+            
+            {(props.messCapable) ? <Image style={style} className="my-2" src={props.dog} onClick={() => props.history.push('/messages')} /> : <Image style={style} className="my-2" src={props.dog} />}
         </div>
     );
 };

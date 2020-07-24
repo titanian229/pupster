@@ -21,7 +21,7 @@ const Browsebar = (props) => {
         <Form>
             <Form.Group controlId="exampleForm.ControlSelect1">
                 <Form.Label>Breed</Form.Label>
-                <Form.Control as="select" onChange={props.changeBreed}>
+                <Form.Control as="select" multiple onChange={props.changeBreed}>
                     {Object.keys(data.message).map((breed, ind) => (
                         <option key={ind}>{breed}</option>
                     ))}
