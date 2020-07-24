@@ -20,7 +20,7 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "yarn build && serve -s build",
+    "start": "serve -s build",
     "startdev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
