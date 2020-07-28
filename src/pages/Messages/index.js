@@ -59,7 +59,6 @@ const Messages = (props) => {
                 <FormControl
                     onChange={(field) => setMessField(field.target.value)}
                     value={messField}
-                    // value={messField}
                     placeholder="send a message!"
                     aria-label="message field"
                 />

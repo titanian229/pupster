@@ -53,27 +53,6 @@ const DogContainer = (props) => {
 
     const source = data.message;
     return <ImageCard likeClicked={likeClicked} dislikeClicked={dislikeClicked} source={source} />;
-
-    // return (
-    //     <Card
-    //         className="my-4"
-    //         style={{
-    //             width: '30vw',
-    //             height: '30vw',
-    //             backgroundImage: 'url(' + source + ')',
-    //             backgroundRepeat: 'no-repeat',
-    //             backgroundSize: 'cover',
-    //             backgroundPosition: 'center center',
-    //             position: 'relative',
-    //         }}
-    //     >
-    //         {/* <Image rounded src={source} fluid /> */}
-    //         <Card.Text>
-    //             <LikeButton clicked={likeClicked} up={true} />
-    //             <LikeButton clicked={dislikeClicked} up={false} />
-    //         </Card.Text>
-    //     </Card>
-    // );
 };
 
 export default DogContainer;
